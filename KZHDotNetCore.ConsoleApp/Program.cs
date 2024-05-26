@@ -1,5 +1,4 @@
-﻿
-using KZHDotNetCore.ConsoleApp;
+﻿using KZHDotNetCore.ConsoleApp.EFCoreExamples;
 using System.Data;
 using System.Data.SqlClient;
 

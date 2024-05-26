@@ -1,4 +1,6 @@
 ﻿using Dapper;
+using KZHDotNetCore.ConsoleApp.Dtos;
+using KZHDotNetCore.ConsoleApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,7 +10,7 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KZHDotNetCore.ConsoleApp
+namespace KZHDotNetCore.ConsoleApp.DapperExamples
 {
     internal class DapperExample
     {
@@ -24,7 +26,7 @@ namespace KZHDotNetCore.ConsoleApp
             Delete(2005);
         }
 
-        private void Read() 
+        private void Read()
         {
             using IDbConnection db = new SqlConnection(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
             List<BlogDto> lst = db.Query<BlogDto>("select * from Tbl_Blog").ToList();
@@ -43,7 +45,7 @@ namespace KZHDotNetCore.ConsoleApp
         {
             using IDbConnection db = new SqlConnection(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
             var item = db.Query<BlogDto>("select * from Tbl_Blog where blogId = @BlogId", new BlogDto { BlogId = id }).FirstOrDefault();
-            if(item is null)
+            if (item is null)
             {
                 Console.WriteLine("No data found"); return;
             }
@@ -54,7 +56,7 @@ namespace KZHDotNetCore.ConsoleApp
             Console.WriteLine(item.BlogContent);
         }
 
-        private void Create(string title, string author, string content) 
+        private void Create(string title, string author, string content)
         {
             var item = new BlogDto
             {

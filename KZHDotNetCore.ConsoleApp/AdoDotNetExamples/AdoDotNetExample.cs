@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection.Metadata;
 
-namespace KZHDotNetCore.ConsoleApp
+namespace KZHDotNetCore.ConsoleApp.AdoDotNetExamples
 {
     internal class AdoDotNetExample
     {
@@ -18,7 +18,7 @@ namespace KZHDotNetCore.ConsoleApp
             UserID = "sa",
             Password = "sasa@123"
         };
-        public void Read() 
+        public void Read()
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
 
@@ -72,7 +72,7 @@ namespace KZHDotNetCore.ConsoleApp
             Console.WriteLine("Blog Author =>" + dr["BlogAuthor"]);
             Console.WriteLine("Blog Content =>" + dr["BlogContent"]);
             Console.WriteLine("----------------------------");
-            
+
         }
         public void Create(string title, string author, string content)
         {
