@@ -54,7 +54,10 @@ foreach (DataRow dr in dt.Rows)
 //adoDotNetExample.Edit(1003);
 //adoDotNetExample.Edit(1);
 
-DapperExample dapperExample = new DapperExample();
-dapperExample.Run();
+//DapperExample dapperExample = new DapperExample();
+//dapperExample.Run();
+
+EFCoreExample eFCoreExample = new EFCoreExample();
+eFCoreExample.Run();
 
 Console.ReadKey();

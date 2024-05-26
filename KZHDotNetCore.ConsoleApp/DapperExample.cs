@@ -27,9 +27,9 @@ namespace KZHDotNetCore.ConsoleApp
         private void Read() 
         {
             using IDbConnection db = new SqlConnection(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
-            List<BlogDto> Lst = db.Query<BlogDto>("select * from Tbl_Blog").ToList();
+            List<BlogDto> lst = db.Query<BlogDto>("select * from Tbl_Blog").ToList();
 
-            foreach (BlogDto item in Lst)
+            foreach (BlogDto item in lst)
             {
                 Console.WriteLine(item.BlogId);
                 Console.WriteLine(item.BlogTitle);
